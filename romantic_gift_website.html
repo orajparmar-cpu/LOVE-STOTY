@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ojaswa ❤️ Ananya</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #ff4e50, #000000);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Netflix-style intro */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  font-size: 30px;
+  animation: fadeOut 3s forwards 3s;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4e50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover { transform: scale(1.1); }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 20px;
+  width: 220px;
+}
+
+.gallery img {
+  width: 220px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.chat-box {
+  max-width: 300px;
+  margin: auto;
+  text-align: left;
+}
+
+.msg {
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.heart {
+  position: fixed;
+  color: red;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+</style>
+</head>
+<body>
+
+<div id="intro">Loading Ojaswa ❤️ Ananya...</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<section class="hero">
+  <h1>Ojaswa ❤️ Ananya</h1>
+  <p>You’re my cutest love story 💕</p>
+  <button onclick="scrollToSection('story')">Start Our Story</button>
+</section>
+
+<section id="story">
+  <h2>Our Story 🎬</h2>
+  <p>Started like a movie… now it’s my favorite reality ❤️</p>
+</section>
+
+<section>
+  <h2>Why I Love You ❤️</h2>
+  <div class="card-container">
+    <div class="card">Your smile 😍</div>
+    <div class="card">Your vibe 💖</div>
+    <div class="card">Your cuteness 🫶</div>
+    <div class="card">Everything about you 🏡</div>
+  </div>
+</section>
+
+<section>
+  <h2>Our Chats 💬</h2>
+  <div class="chat-box">
+    <div class="msg">Ojaswa: Hey cutie 😏</div>
+    <div class="msg">Ananya: Shut up 😂</div>
+    <div class="msg">Ojaswa: I love you ❤️</div>
+    <div class="msg">Ananya: I know 😌</div>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2>Our Memories 📸</h2>
+  <img src="Snapchat-947417.jpg" />
+  <img src="Snapchat-436675010.jpg" />
+  <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2" />
+</section>
+
+<section>
+  <h2>A Letter 💌</h2>
+  <p id="letter"></p>
+</section>
+
+<section>
+  <h2>Final Question 💍</h2>
+  <button onclick="proposal()">Will you stay with me forever?</button>
+</section>
+
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+const text = "Ananya, you’re my favorite person, my peace, and my cutest blessing. I love you ❤️ — Ojaswa";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("letter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 40);
+  }
+}
+typeWriter();
+
+function proposal() {
+  alert("There’s only one correct answer 😏❤️ — Ojaswa");
+}
+
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '❤️';
+  heart.style.left = Math.random() * 100 + 'vw';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
